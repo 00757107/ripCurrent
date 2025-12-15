@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>熱的傳播：熱的傳導教學簡報</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei', 'Heiti TC', sans-serif;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Gradient Background */
+        .bg-gradient-custom {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+        }
+        .bg-accent {
+            background-color: #e53e3e; /* Red for heat */
+        }
+        .text-accent {
+            color: #e53e3e;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 h-screen w-screen relative">
+
+    <!-- Slides Container -->
+    <div id="slides-container" class="w-full h-full relative overflow-hidden bg-gradient-custom">
+
+        <!-- Slide 1: Cover -->
+        <div class="slide active w-full h-full flex-col justify-center items-center text-center p-8">
+            <div class="mb-6 text-6xl text-orange-500 animate-bounce"><i class="fas fa-fire-alt"></i></div>
+            <h1 class="text-5xl md:text-7xl font-bold text-gray-800 mb-4 fade-in-up">熱的傳播</h1>
+            <h2 class="text-3xl md:text-4xl text-gray-600 mb-8 fade-in-up" style="animation-delay: 0.2s;">單元一：熱的傳導</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up" style="animation-delay: 0.4s;">
+                <p class="text-xl text-gray-700">什麼是熱的傳導？什麼是傳導？</p>
+                <p class="text-md text-gray-500 mt-2">適用年級：國小六年級自然</p>
+            </div>
+            <p class="mt-12 text-gray-400 text-sm">按 [→] 或點擊箭頭開始</p>
+        </div>
+
+        <!-- Slide 2: Preparation -->
+        <div class="slide w-full h-full flex-col justify-center items-center p-8 md:p-16">
+            <h2 class="text-4xl font-bold text-gray-800 mb-8 border-b-4 border-orange-400 pb-2">壹、課前準備</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
+                <div class="bg-white p-6 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold text-orange-600 mb-4"><i class="fas fa-chalkboard-teacher mr-2"></i>準備工作</h3>
+                    <ul class="text-lg text-gray-700 space-y-2 list-disc list-inside">
+                        <li>平板電腦(請<strong style="color:red">小組長</strong>負責領取平板電腦)</li>
+                        <li>實驗器材：燒杯、金屬棒、奶油/蠟、酒精燈、夾子<br>(請<strong style="color:red">小組長指派一位同學</strong>負責領取實驗器材)</li>
+                        <li>同儕互評表(請<strong style="color:red">小組長指派一位同學</strong>負責領取同儕互評表)</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-4"><i class="fas fa-user-graduate mr-2"></i>注意事項</h3>
+                    <ul class="text-lg text-gray-700 space-y-2 list-disc list-inside">
+                        <li>確認平板已連線</li>
+                        <li>熟悉器材使用安全規範</li>
+                        <li>準備好<strong style="color:red">好奇的心</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Peer Evaluation -->
+        <div class="slide w-full h-full flex-col justify-center items-center p-8 md:p-16">
+            <h2 class="text-4xl font-bold text-gray-800 mb-8 border-b-4 border-purple-400 pb-2">同儕互評表說明</h2>
+            
+            <div class="w-full max-w-5xl space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-purple-600 mb-4"><i class="fas fa-clipboard-check mr-2"></i>同儕互評表使用方式</h3>
+                    <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500 mb-4">
+                        <p class="text-lg text-gray-700">在實驗過程中，請小組成員互相觀察、記錄並給予回饋，幫助彼此學習成長。</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl border-2 border-gray-200 flex items-center justify-center h-96 md:h-[500px]">
+                        <img src="同儕互評表.jpg" alt="同儕互評表" class="max-w-full max-h-full object-contain rounded-lg">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Motivation -->
+        <div class="slide w-full h-full flex-col justify-center items-center p-8">
+            <h2 class="text-4xl font-bold text-gray-800 mb-12">天氣冷的時候...</h2>
+            <div class="flex flex-col md:flex-row gap-8 items-center justify-center">
+                <div class="text-center p-6">
+                    <div class="text-8xl text-blue-400 mb-4"><i class="fas fa-snowflake"></i></div>
+                    <p class="text-2xl text-gray-700">手冰冷時，你會怎麼做？</p>
+                </div>
+                <div class="text-6xl text-gray-300 hidden md:block"><i class="fas fa-arrow-right"></i></div>
+                <div class="text-center p-6 bg-orange-50 rounded-full w-64 h-64 flex flex-col justify-center items-center shadow-inner border-4 border-orange-200">
+                    <div class="text-6xl text-red-500 mb-2"><i class="fas fa-mug-hot"></i></div>
+                    <p class="text-xl font-bold text-gray-800">握熱水杯！</p>
+                </div>
+            </div>
+            <div class="mt-12 bg-gray-800 text-white p-6 rounded-lg max-w-2xl text-center">
+                <p class="text-2xl font-bold">思考：為什麼握著熱水杯，手會變熱？</p>
+                <p class="text-lg text-yellow-300 mt-2">熱是怎麼跑到手上的？</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: POE - Predict -->
+        <div class="slide w-full h-full flex-col justify-center items-center p-8">
+            <div class="absolute top-8 right-8 bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-bold">
+                預測階段
+            </div>
+            <h2 class="text-4xl font-bold text-gray-800 mb-8">請大家大膽預測 (Predict)</h2>
+            
+            <div class="flex flex-col md:flex-row w-full max-w-6xl gap-8">
+                <div class="flex-1 bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4 border-b pb-2">實驗情境</h3>
+                    <p class="text-lg mb-4">如果在金屬棒最左端加熱，上面的奶油 A、B、C 會發生什麼事？</p>
+                    <div class="relative h-32 bg-gray-200 rounded-lg flex items-center px-4 overflow-hidden">
+                        <div class="text-4xl text-red-600 animate-pulse mr-2"><i class="fas fa-fire"></i></div>
+                        <div class="h-4 bg-gray-500 w-full rounded relative">
+                            <div class="absolute -top-6 left-1/4 transform -translate-x-1/2 flex flex-col items-center">
+                                <div class="w-4 h-4 bg-yellow-300 rounded-full"></div>
+                                <span class="text-xs font-bold mt-1">A</span>
+                            </div>
+                            <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                                <div class="w-4 h-4 bg-yellow-300 rounded-full"></div>
+                                <span class="text-xs font-bold mt-1">B</span>
+                            </div>
+                            <div class="absolute -top-6 left-3/4 transform -translate-x-1/2 flex flex-col items-center">
+                                <div class="w-4 h-4 bg-yellow-300 rounded-full"></div>
+                                <span class="text-xs font-bold mt-1">C</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-lg mb-4">請正確使用我們的酒精燈，並且注意安全，請勿嬉戲打鬧</p>
+                </div>
+
+                <div class="flex-1 flex flex-col gap-4">
+                    <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
+                        <h3 class="text-xl font-bold mb-2">思考問題</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>它們會同時掉下來嗎？</li>
+                            <li>如果照順序，是 A→B→C 還是 C→B→A？</li>
+                            <li>為什麼你會這樣覺得？</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-xl border-l-4 border-yellow-500 flex items-center">
+                        <div class="text-3xl text-yellow-600 mr-4"><i class="fas fa-users-cog"></i></div>
+                        <div>
+                            <h4 class="font-bold">任務提醒</h4>
+                            <p class="text-sm">請填寫預測結果，並開始使用「同儕互評表」。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: POE - Observe -->
+        <div class="slide w-full h-full flex-col justify-center items-center p-8">
+            <div class="absolute top-8 right-8 bg-green-100 text-green-800 px-4 py-2 rounded-full font-bold">
+                觀察階段
+            </div>
+            <h2 class="text-4xl font-bold text-gray-800 mb-8">實驗觀察 (Observe)</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4">1</div>
+                        <p class="text-xl text-gray-700">小組進行實驗，使用夾子夾著金屬棒，並用酒精燈<span class="font-bold text-red-500">穩定加熱</span>金屬棒的另一端。</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4">2</div>
+                        <p class="text-xl text-gray-700">觀察奶油熔化的順序與變化。</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4">3</div>
+                        <p class="text-xl text-gray-700">使用平板錄影紀錄</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-xl flex items-center justify-center">
+                   <div class="text-center">
+                       <i class="fas fa-tablet-alt text-6xl text-white mb-4"></i>
+                       <p class="text-white text-lg">準備好平板以及開啟攝影！</p>
+                       <p class="text-gray-400 text-sm mt-2">紀錄：掉落時間</p>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Scratch Analysis -->
+        <div class="slide w-full h-full flex-col justify-center items-center p-8 bg-indigo-50">
+             <h2 class="text-4xl font-bold text-indigo-800 mb-4">數據會說話：Scratch 折線圖</h2>
+             <p class="text-xl text-gray-600 mb-8">Scratch 專案連結：<a href="https://scratch.mit.edu/projects/1245360619" target="_blank" class="text-blue-500 underline">點擊開啟</a></p>
+             
+             <div class="bg-white p-4 rounded-xl shadow-2xl w-full max-w-4xl h-96 border-4 border-indigo-200 flex items-center justify-center relative">
+                 <!-- Mockup of Scratch Graph -->
+                 <img src="示意圖.png" alt="Scratch Graph" class="w-full h-full object-contain">
+                 <div class="absolute top-4 right-4 bg-indigo-100 p-2 rounded text-indigo-800 text-sm">
+                     <i class="fas fa-chart-line mr-2"></i>示意圖
+                 </div>
+             </div>
+             
+             <div class="mt-6 text-center">
+                 <p class="text-2xl font-bold text-gray-800">觀察折線圖，你發現了什麼？</p>
+                 <p class="text-lg text-gray-600">距離火源越遠，掉落時間越...？</p>
+             </div>
+        </div>
+
+        <!-- Slide 7: POE - Explain -->
+        <div class="slide w-full h-full flex-col justify-center items-center p-8">
+            <div class="absolute top-8 right-8 bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-bold">
+                解釋階段
+            </div>
+            <h2 class="text-4xl font-bold text-gray-800 mb-8">解釋結果 (Explain)</h2>
+            
+            <div class="max-w-4xl w-full space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow border-l-8 border-green-500">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">問題 1</h3>
+                    <p class="text-xl text-gray-600">實驗結果和你的預測一樣嗎？為什麼奶油是「一個接一個」掉下來的？</p>
+                    <details class="mt-2">
+                        <summary class="text-green-600 font-bold cursor-pointer hover:text-green-700 select-none">💡 點擊查看學生回答</summary>
+                        <p class="mt-2 text-green-600 font-bold">💡 學生回答：熱跑過去了、熱傳過去了。</p>
+                    </details>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow border-l-8 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">問題 2</h3>
+                    <p class="text-xl text-gray-600">從 Scratch 折線圖可以看出什麼關係？</p>
+                    <details class="mt-2">
+                        <summary class="text-indigo-600 font-bold cursor-pointer hover:text-indigo-700 select-none">💡 點擊查看結論</summary>
+                        <p class="mt-2 text-indigo-600 font-bold">💡 結論：距離燃燒處越遠，掉落的時間越慢（成正比關係）。</p>
+                    </details>
+                </div>
+                
+                <div class="bg-red-50 p-6 rounded-lg shadow text-center border-2 border-red-200">
+                    <h3 class="text-3xl font-bold text-red-600 mb-2">總結：熱傳導 (Conduction)</h3>
+                    <p class="text-xl text-gray-700">熱沿著物體，從<span class="font-bold text-red-500">高溫</span>處傳向<span class="font-bold text-blue-500">低溫</span>處。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Life Application -->
+        <div class="slide w-full h-full flex-col justify-center items-center p-8">
+            <h2 class="text-4xl font-bold text-gray-800 mb-12">生活中的科學</h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="relative w-64 h-64">
+                    <div class="absolute inset-0 bg-gray-300 rounded-full shadow-inner flex items-center justify-center">
+                        <i class="fas fa-utensils text-9xl text-gray-400"></i>
+                    </div>
+                    <!-- Pot graphic -->
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                         <div class="w-48 h-24 bg-gray-500 rounded-b-full relative">
+                             <div class="absolute -top-4 w-48 h-8 bg-gray-400 rounded-full"></div>
+                             <!-- Handle -->
+                             <div class="absolute top-0 right-0 w-24 h-4 bg-orange-700 transform rotate-12 origin-left rounded"></div>
+                         </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6 max-w-lg">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">為什麼鍋身是金屬？</h3>
+                        <p class="text-lg text-gray-600">因為金屬是<span class="text-red-500 font-bold">良導體</span>，熱傳導快，可以快速煮熟食物。</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">為什麼夾子是木頭？</h3>
+                        <p class="text-lg text-gray-600">因為它們是<span class="text-blue-500 font-bold">不良導體</span>，熱傳導慢，手才不會燙傷。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Extension -->
+        <div class="slide w-full h-full flex-col justify-center items-center p-8 bg-blue-50">
+            <h2 class="text-4xl font-bold text-blue-900 mb-8">想一想：延伸思考</h2>
+            
+            <div class="text-center max-w-3xl">
+                <i class="fas fa-wind text-8xl text-blue-300 mb-8 animate-pulse"></i>
+                <p class="text-3xl text-gray-800 font-bold mb-6">
+                    「為什麼冷氣吹出的冷風沒碰到我，<br>但我卻會覺得涼爽？」
+                </p>
+                <div class="bg-white p-6 rounded-xl shadow-md inline-block">
+                    <p class="text-xl text-gray-600">這是固體的傳導嗎？還是別的方式？</p>
+                    <p class="text-sm text-gray-400 mt-4">(預告下節課主題：液體與氣體的對流)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Homework -->
+        <div class="slide w-full h-full flex-col justify-center items-center p-8">
+            <h2 class="text-4xl font-bold text-gray-800 mb-8">回家作業：生活觀察家</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8 w-full max-w-5xl items-center justify-center">
+                <!-- Placeholder for Worksheet Image -->
+                <div class="w-full md:w-1/2 bg-gray-200 h-96 rounded-xl flex flex-col items-center justify-center border-4 border-dashed border-gray-400">
+                    <img src="生活觀察家.jpg" alt="生活觀察家" class="max-w-full max-h-full object-contain rounded-lg">
+                </div>
+                
+                <div class="w-full md:w-1/2 text-left space-y-4">
+                    <h3 class="text-2xl font-bold text-orange-600">任務說明：</h3>
+                    <ol class="list-decimal list-inside text-xl text-gray-700 space-y-3">
+                        <li>找出生活中 3 個傳導現象。</li>
+                        <li>分辨介質是固態、液態還是氣態。</li>
+                        <li>完成學習單並在下次上課分享。</li>
+                    </ol>
+                    <div class="mt-8 p-4 bg-yellow-100 rounded-lg text-yellow-800">
+                        <i class="fas fa-star mr-2"></i>別忘了繳回這堂課的「同儕互評表」喔！
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: End -->
+        <div class="slide w-full h-full flex-col justify-center items-center p-8 bg-gray-900 text-white">
+            <h1 class="text-6xl font-bold mb-8">第一節 完</h1>
+            <p class="text-2xl text-gray-300 mb-12">感謝大家的參與！</p>
+            <div class="flex gap-4">
+                <button onclick="currentSlide = 0; showSlide(0)" class="px-6 py-3 bg-blue-600 rounded-full hover:bg-blue-500 transition">
+                    <i class="fas fa-redo mr-2"></i>重新播放
+                </button>
+            </div>
+            <p class="mt-16 text-sm text-gray-500">Designed for Science Class</p>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="absolute bottom-8 left-0 right-0 flex justify-center gap-8 z-10">
+            <button id="prevBtn" class="w-12 h-12 rounded-full bg-white shadow-lg text-gray-800 hover:bg-gray-100 focus:outline-none flex items-center justify-center transition transform hover:scale-110">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <span id="slide-indicator" class="flex items-center text-gray-500 font-mono bg-white/80 px-4 rounded-full">1 / 12</span>
+            <button id="nextBtn" class="w-12 h-12 rounded-full bg-orange-500 shadow-lg text-white hover:bg-orange-600 focus:outline-none flex items-center justify-center transition transform hover:scale-110">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="absolute bottom-0 left-0 h-2 bg-gray-200 w-full">
+            <div id="progress-bar" class="h-full bg-orange-500 transition-all duration-300" style="width: 0%"></div>
+        </div>
+
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progress-bar');
+        const slideIndicator = document.getElementById('slide-indicator');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            if (index < 0) index = 0;
+            if (index >= totalSlides) index = totalSlides - 1;
+            
+            currentSlide = index;
+
+            slides.forEach((slide, i) => {
+                if (i === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            // Update Progress Bar
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            progressBar.style.width = `${progress}%`;
+            
+            // Update Indicator
+            slideIndicator.innerText = `${currentSlide + 1} / ${totalSlides}`;
+        }
+
+        // Event Listeners
+        document.getElementById('prevBtn').addEventListener('click', () => showSlide(currentSlide - 1));
+        document.getElementById('nextBtn').addEventListener('click', () => showSlide(currentSlide + 1));
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') showSlide(currentSlide - 1);
+            if (e.key === 'ArrowRight' || e.key === ' ') showSlide(currentSlide + 1);
+        });
+
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
