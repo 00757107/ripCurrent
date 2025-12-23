@@ -33,6 +33,106 @@
                 transform: translateY(0);
             }
         }
+        /* 旋轉動畫 */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .animate-rotate {
+            animation: rotate 3s linear infinite;
+        }
+        /* 搖擺動畫 */
+        @keyframes wiggle {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(-5deg);
+            }
+            75% {
+                transform: rotate(5deg);
+            }
+        }
+        .animate-wiggle {
+            animation: wiggle 1s ease-in-out infinite;
+        }
+        /* 左右移動動畫 */
+        @keyframes slideLeftRight {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+        }
+        .animate-slide {
+            animation: slideLeftRight 2s ease-in-out infinite;
+        }
+        /* 閃爍動畫 */
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        .animate-blink {
+            animation: blink 1.5s ease-in-out infinite;
+        }
+        /* 彈跳進入動畫 */
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .animate-bounce-in {
+            animation: bounceIn 0.6s ease-out;
+        }
+        /* 熱氣上升動畫 */
+        @keyframes riseUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-20px) scale(1.1);
+                opacity: 0;
+            }
+        }
+        .animate-rise {
+            animation: riseUp 2s ease-out infinite;
+        }
+        /* 心跳動畫 */
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.05);
+            }
+        }
+        .animate-heartbeat {
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
         /* Gradient Background */
         .bg-gradient-custom {
             background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
@@ -99,7 +199,7 @@
             <h2 class="text-4xl font-bold text-gray-800 mb-8 border-b-4 border-orange-400 pb-2">壹、課前準備</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
                 <div class="bg-white p-6 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-2xl font-bold text-orange-600 mb-4"><i class="fas fa-chalkboard-teacher mr-2"></i>準備工作</h3>
+                    <h3 class="text-2xl font-bold text-orange-600 mb-4"><i class="fas fa-chalkboard-teacher mr-2 animate-heartbeat"></i>準備工作</h3>
                     <ul class="text-lg text-gray-700 space-y-2 list-disc list-inside">
                         <li>平板電腦(請<strong style="color:red">小組長</strong>負責領取平板電腦)</li>
                         <li>實驗器材：燒杯、金屬棒、奶油/蠟、酒精燈、夾子<br>(請<strong style="color:red">小組長指派一位同學</strong>負責領取實驗器材)</li>
@@ -107,7 +207,7 @@
                     </ul>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-4"><i class="fas fa-user-graduate mr-2"></i>注意事項</h3>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-4"><i class="fas fa-user-graduate mr-2 animate-heartbeat"></i>注意事項</h3>
                     <ul class="text-lg text-gray-700 space-y-2 list-disc list-inside">
                         <li>確認平板已連線</li>
                         <li>熟悉器材使用安全規範</li>
@@ -123,7 +223,7 @@
             
             <div class="w-full max-w-5xl space-y-6">
                 <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-bold text-purple-600 mb-4"><i class="fas fa-clipboard-check mr-2"></i>同儕互評表使用方式</h3>
+                    <h3 class="text-2xl font-bold text-purple-600 mb-4"><i class="fas fa-clipboard-check mr-2 animate-heartbeat"></i>同儕互評表使用方式</h3>
                     <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500 mb-4">
                         <p class="text-lg text-gray-700">在實驗過程中，請小組成員互相觀察、記錄並給予回饋，幫助彼此學習成長。</p>
                     </div>
@@ -141,18 +241,18 @@
             <h2 class="text-4xl font-bold text-gray-800 mb-12">天氣冷的時候...</h2>
             <div class="flex flex-col md:flex-row gap-8 items-center justify-center">
                 <div class="text-center p-6">
-                    <div class="text-8xl text-blue-400 mb-4"><i class="fas fa-snowflake"></i></div>
+                    <div class="text-8xl text-blue-400 mb-4 animate-rotate"><i class="fas fa-snowflake"></i></div>
                     <p class="text-2xl text-gray-700">手冰冷時，你會怎麼做？</p>
                 </div>
-                <div class="text-6xl text-gray-300 hidden md:block"><i class="fas fa-arrow-right"></i></div>
+                <div class="text-6xl text-gray-300 hidden md:block animate-slide"><i class="fas fa-arrow-right"></i></div>
                 <div class="text-center p-6 bg-orange-50 rounded-full w-64 h-64 flex flex-col justify-center items-center shadow-inner border-4 border-orange-200">
-                    <div class="text-6xl text-red-500 mb-2"><i class="fas fa-mug-hot"></i></div>
+                    <div class="text-6xl text-red-500 mb-2 animate-wiggle"><i class="fas fa-mug-hot"></i></div>
                     <p class="text-xl font-bold text-gray-800">握熱水杯！</p>
                 </div>
             </div>
             <div class="mt-12 bg-gray-800 text-white p-6 rounded-lg max-w-2xl text-center">
-                <p class="text-2xl font-bold">思考：為什麼握著熱水杯，手會變熱？</p>
-                <p class="text-lg text-yellow-300 mt-2">熱是怎麼跑到手上的？</p>
+                <p class="text-2xl font-bold animate-heartbeat">思考：為什麼握著熱水杯，手會變熱？</p>
+                <p class="text-lg text-yellow-300 mt-2 animate-blink" style="animation-delay: 0.3s;">熱是怎麼跑到手上的？</p>
             </div>
         </div>
 
@@ -169,6 +269,7 @@
                     <p class="text-lg mb-4">如果在金屬棒最左端加熱，上面的奶油 A、B、C 會發生什麼事？</p>
                     <div class="relative h-32 bg-gray-200 rounded-lg flex items-center px-4 overflow-hidden">
                         <div class="text-4xl text-red-600 animate-pulse mr-2"><i class="fas fa-fire"></i></div>
+                        <div class="absolute left-8 top-2 text-2xl text-orange-400 opacity-60 animate-rise"><i class="fas fa-arrow-up"></i></div>
                         <div class="h-4 bg-gray-500 w-full rounded relative">
                             <div class="absolute -top-6 left-1/4 transform -translate-x-1/2 flex flex-col items-center">
                                 <div class="w-4 h-4 bg-yellow-300 rounded-full"></div>
@@ -197,7 +298,7 @@
                         </ul>
                     </div>
                     <div class="bg-yellow-50 p-4 rounded-xl border-l-4 border-yellow-500 flex items-center">
-                        <div class="text-3xl text-yellow-600 mr-4"><i class="fas fa-users-cog"></i></div>
+                        <div class="text-3xl text-yellow-600 mr-4 animate-heartbeat"><i class="fas fa-users-cog"></i></div>
                         <div>
                             <h4 class="font-bold">任務提醒</h4>
                             <p class="text-sm">請填寫預測結果，並開始使用「同儕互評表」。</p>
@@ -217,22 +318,22 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
                 <div class="space-y-6">
                     <div class="flex items-start">
-                        <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4">1</div>
-                        <p class="text-xl text-gray-700">小組進行實驗，使用夾子夾著金屬棒，並用酒精燈<span class="font-bold text-red-500">穩定加熱</span>金屬棒的另一端。</p>
+                        <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4 animate-bounce-in" style="animation-delay: 0.1s;">1</div>
+                        <p class="text-xl text-gray-700">小組進行實驗，使用夾子夾著金屬棒，並用酒精燈<span class="font-bold text-red-500 animate-blink">穩定加熱</span>金屬棒的另一端。</p>
                     </div>
                     <div class="flex items-start">
-                        <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4">2</div>
+                        <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4 animate-bounce-in" style="animation-delay: 0.3s;">2</div>
                         <p class="text-xl text-gray-700">觀察奶油熔化的順序與變化。</p>
                     </div>
                     <div class="flex items-start">
-                        <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4">3</div>
+                        <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4 animate-bounce-in" style="animation-delay: 0.5s;">3</div>
                         <p class="text-xl text-gray-700">使用平板錄影紀錄</p>
                     </div>
                 </div>
                 
                 <div class="bg-gray-800 p-6 rounded-xl flex items-center justify-center">
                    <div class="text-center">
-                       <i class="fas fa-tablet-alt text-6xl text-white mb-4"></i>
+                       <i class="fas fa-tablet-alt text-6xl text-white mb-4 animate-heartbeat"></i>
                        <p class="text-white text-lg">準備好平板以及開啟攝影！</p>
                        <p class="text-gray-400 text-sm mt-2">紀錄：掉落時間</p>
                    </div>
@@ -254,8 +355,8 @@
              </div>
              
              <div class="mt-6 text-center">
-                 <p class="text-2xl font-bold text-gray-800">觀察折線圖，你發現了什麼？</p>
-                 <p class="text-lg text-gray-600">距離火源越遠，掉落時間越...？</p>
+                 <p class="text-2xl font-bold text-gray-800 animate-heartbeat">觀察折線圖，你發現了什麼？</p>
+                 <p class="text-lg text-gray-600 animate-blink" style="animation-delay: 0.5s;">距離火源越遠，掉落時間越...？</p>
              </div>
         </div>
 
@@ -286,8 +387,8 @@
                 </div>
                 
                 <div class="bg-red-50 p-6 rounded-lg shadow text-center border-2 border-red-200">
-                    <h3 class="text-3xl font-bold text-red-600 mb-2">總結：熱傳導 (Conduction)</h3>
-                    <p class="text-xl text-gray-700">熱沿著物體，從<span class="font-bold text-red-500">高溫</span>處傳向<span class="font-bold text-blue-500">低溫</span>處。</p>
+                    <h3 class="text-3xl font-bold text-red-600 mb-2 animate-heartbeat">總結：熱傳導 (Conduction)</h3>
+                    <p class="text-xl text-gray-700">熱沿著物體，從<span class="font-bold text-red-500 animate-blink">高溫</span>處傳向<span class="font-bold text-blue-500 animate-blink" style="animation-delay: 0.5s;">低溫</span>處。</p>
                 </div>
             </div>
         </div>
@@ -299,7 +400,7 @@
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="relative w-64 h-64">
                     <div class="absolute inset-0 bg-gray-300 rounded-full shadow-inner flex items-center justify-center">
-                        <i class="fas fa-utensils text-9xl text-gray-400"></i>
+                        <i class="fas fa-utensils text-9xl text-gray-400 animate-wiggle"></i>
                     </div>
                     <!-- Pot graphic -->
                     <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
@@ -307,19 +408,21 @@
                              <div class="absolute -top-4 w-48 h-8 bg-gray-400 rounded-full"></div>
                              <!-- Handle -->
                              <div class="absolute top-0 right-0 w-24 h-4 bg-orange-700 transform rotate-12 origin-left rounded"></div>
+                             <!-- Heat waves -->
+                             <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 text-3xl text-orange-400 opacity-70 animate-rise"><i class="fas fa-arrow-up"></i></div>
                          </div>
                     </div>
                 </div>
                 
                 <div class="space-y-6 max-w-lg">
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up">
                         <h3 class="text-2xl font-bold text-gray-800 mb-2">為什麼鍋身是金屬？</h3>
-                        <p class="text-lg text-gray-600">因為金屬是<span class="text-red-500 font-bold">良導體</span>，熱傳導快，可以快速煮熟食物。</p>
+                        <p class="text-lg text-gray-600">因為金屬是<span class="text-red-500 font-bold animate-blink">良導體</span>，熱傳導快，可以快速煮熟食物。</p>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up" style="animation-delay: 0.2s;">
                         <h3 class="text-2xl font-bold text-gray-800 mb-2">為什麼夾子是木頭？</h3>
-                        <p class="text-lg text-gray-600">因為它們是<span class="text-blue-500 font-bold">不良導體</span>，熱傳導慢，手才不會燙傷。</p>
+                        <p class="text-lg text-gray-600">因為它們是<span class="text-blue-500 font-bold animate-blink" style="animation-delay: 0.3s;">不良導體</span>，熱傳導慢，手才不會燙傷。</p>
                     </div>
                 </div>
             </div>
@@ -339,7 +442,7 @@
                 <div class="w-full md:w-1/2 space-y-4">
                     <div class="bg-white p-6 rounded-xl shadow-md">
                         <h3 class="text-2xl font-bold text-orange-600 mb-4">
-                            <i class="fas fa-mug-hot mr-2"></i>為什麼保溫杯可以保溫？
+                            <i class="fas fa-mug-hot mr-2 animate-heartbeat"></i>為什麼保溫杯可以保溫？
                         </h3>
                         <div class="space-y-3 text-lg text-gray-700">
                             <p class="leading-relaxed">
@@ -356,7 +459,7 @@
                     
                     <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400">
                         <p class="text-gray-700">
-                            <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                            <i class="fas fa-lightbulb text-yellow-500 mr-2 animate-blink"></i>
                             <strong>想一想：</strong>為什麼保溫杯的外層摸起來不會很燙呢？
                         </p>
                     </div>
@@ -398,8 +501,8 @@
                         <li>完成學習單並在下次上課分享。</li>
                     </ol>
                     <div class="mt-8 p-4 bg-yellow-100 rounded-lg text-yellow-800">
-                        <i class="fas fa-star mr-2"></i>別忘了繳回這堂課的「同儕互評表」喔！
-                        <p class="text-sm text-red-400 mt-2">清洗乾淨我們的實驗工具靜放在桌上，不要拿走喔！</p>
+                        <i class="fas fa-star mr-2 animate-blink"></i>別忘了繳回這堂課的「同儕互評表」喔！
+                        <p class="text-sm text-red-400 mt-2 animate-blink" style="animation-delay: 0.3s;">清洗乾淨我們的實驗工具靜放在桌上，不要拿走喔！</p>
                     </div>
                 </div>
             </div>
